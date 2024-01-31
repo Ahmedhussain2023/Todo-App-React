@@ -4,13 +4,15 @@ import Home from '../../screens/home/home'
 import Login from '../../screens/login/login'
 import Register from '../../screens/register/register'
 import ResponsiveAppBar from '../../components/Navbar'
+import { WifiProtectedSetup } from '@mui/icons-material'
+import ProtectedRoutes from './ProtectedRoutes'
 
 const Routerconfig = () => {
   return (
     <BrowserRouter>
-    <ResponsiveAppBar/>
+    <ResponsiveAppBar />
     <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<ProtectedRoutes component={<Home/>}/>} />
         <Route path='login' element={<Login />} />
         <Route path='register' element={<Register />} />
 
